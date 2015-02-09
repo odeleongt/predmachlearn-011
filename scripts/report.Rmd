@@ -1,0 +1,25 @@
+---
+title: Weight lifting classification
+author: Oscar de León
+output:
+  html_document:
+    pandoc_args: [
+      "-o", "../index.html"
+    ]
+---
+
+
+### Overview
+
+
+### Building the model
+
+
+### Using cross validation
+
+
+### Out-of-sample error estimation
+
+
+### Choices
+
