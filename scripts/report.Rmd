@@ -3,6 +3,8 @@ title: Weight lifting classification
 author: Oscar de León
 output:
   html_document:
+    includes:
+      in_header: ../includes/html5_compat.html
     pandoc_args: [
       "-o", "../index.html"
     ]
@@ -26,12 +28,16 @@ knitr::opts_knit$set(root.dir = "..")
 source(file = "./scripts/get_data.R")
 ```
 
+<details>
+<summary>**Read in data and clean up** (section collapsed for readability, in [compatible browsers](http://www.w3schools.com/tags/tag_details.asp))
 
 I obtained the data as specified in the instructions, and loaded the training set in R.
 
+</summary>
 ```{r, message=FALSE, comment=""}
 source(file = "./scripts/prepare_data.R", echo = TRUE)
 ```
+</details>
 
 ### Using cross validation
 
