@@ -12,10 +12,10 @@ output:
 ### Overview
 
 
-### Building the model
-
-
 ### Using cross validation
+
+
+### Building the model
 
 
 ### Out-of-sample error estimation
