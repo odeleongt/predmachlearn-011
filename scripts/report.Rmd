@@ -23,6 +23,20 @@ knitr::opts_knit$set(root.dir = "..")
 This report addresses my Practical Machine Learning ([predmachlearn-011](https://www.coursera.org/course/predmachlearn)) course project.
 It includes a description of the data processing steps, the rationale for model selection, the _model building process_ the use of _cross-validation for estimation of the out of sample error_.
 
+This compiled report contains code chunks to show the data analysis as it was performed.
+The code chunks are collapsed for readability (in [compatible browsers](http://www.w3schools.com/tags/tag_details.asp)) and can be expanded for revision by clicking on the sentences labeled as "section collapsed for readability".
+For example:
+
+<details><summary>
+If the browser you are using does not support this feature...
+(section collapsed for readability)
+</summary>
+this text is shown upon page loading (as are the code chunks).
+Otherwise, it (and the code chunks) stay collapse until you open them.
+</details>
+
+The code is also available for review in the [repository](https://github.com/odeleongt/predmachlearn-011) containing this github page.
+
 #### Getting and preparing data
 
 ```{r results='hide'}
@@ -31,7 +45,7 @@ source(file = "./scripts/get_data.R")
 ```
 
 <details>
-<summary>**Read in data and clean up** (section collapsed for readability, in [compatible browsers](http://www.w3schools.com/tags/tag_details.asp))
+<summary>**Read in data and clean up** (section collapsed for readability)
 
 I obtained the data as specified in the instructions, and loaded the training set in R.
 
