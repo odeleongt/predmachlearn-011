@@ -20,6 +20,8 @@ knitr::opts_knit$set(root.dir = "..")
 
 ### Overview
 
+This report addresses my Practical Machine Learning ([predmachlearn-011](https://www.coursera.org/course/predmachlearn)) course project.
+It includes a description of the data processing steps, the rationale for model selection, the _model building process_ the use of _cross-validation for estimation of the out of sample error_.
 
 #### Getting and preparing data
 
@@ -39,14 +41,22 @@ source(file = "./scripts/prepare_data.R", echo = TRUE)
 ```
 </details>
 
-### Using cross validation
+#### Using cross validation
+
+I used single set cross validation to estimate the out of sample error of the model.
+For this, I split the training dataset in training (60%) and validation (40%) datasets.
 
 
 ### Building the model
 
+In this section I describe the model building process.
+
 
 ### Out-of-sample error estimation
 
+To estimate the out of sample error, I used the generated model to predict the class for each observation in the validation set.
 
-### Choices
 
+### The model in action
+
+Using the developed model, I predicted the class for each observation in the test set and obtained all 20 results correctly.
