@@ -37,6 +37,8 @@ Otherwise, it (and the code chunks) stay collapse until you open them.
 
 The code is also available for review in the [repository](https://github.com/odeleongt/predmachlearn-011) containing this github page.
 
+</br>
+
 #### Getting and preparing data
 
 ```{r results='hide'}
@@ -55,21 +57,29 @@ source(file = "./scripts/prepare_data.R", echo = TRUE)
 ```
 </details>
 
+</br>
+
 #### Using cross validation
 
 I used single set cross validation to estimate the out of sample error of the model.
 For this, I split the training dataset in training (60%) and validation (40%) datasets.
 
 
+</br>
+
 ### Building the model
 
 In this section I describe the model building process.
 
 
+</br>
+
 ### Out-of-sample error estimation
 
 To estimate the out of sample error, I used the generated model to predict the class for each observation in the validation set.
 
+
+</br>
 
 ### The model in action
 
