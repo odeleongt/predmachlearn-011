@@ -9,8 +9,29 @@ output:
 ---
 
 
+
+
+```{r results='hide', message=FALSE, echo=FALSE}
+knitr::opts_knit$set(root.dir = "..")
+```
+
+
 ### Overview
 
+
+#### Getting and preparing data
+
+```{r results='hide'}
+# Get data (downloads only if not available locally)
+source(file = "./scripts/get_data.R")
+```
+
+
+I obtained the data as specified in the instructions, and loaded the training set in R.
+
+```{r, message=FALSE, comment=""}
+source(file = "./scripts/prepare_data.R", echo = TRUE)
+```
 
 ### Using cross validation
 
