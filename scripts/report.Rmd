@@ -118,7 +118,7 @@ Show model output (section collapsed for readability)
 ```{r echo=FALSE, comment=""}
 trained
 ```
-<details>
+</details>
 
 
 </br>
