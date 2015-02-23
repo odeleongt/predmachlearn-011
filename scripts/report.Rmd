@@ -3,6 +3,7 @@ title: Weight lifting classification
 author: Oscar de León
 output:
   html_document:
+    keep_md: true
     includes:
       in_header: ../includes/html5_compat.html
     pandoc_args: [
