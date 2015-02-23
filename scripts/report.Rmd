@@ -106,7 +106,7 @@ qplot(data = training, x = roll_forearm, y = pitch_forearm,
 
 I trained the model with the `randomForest` package, using the default settings. 
 
-```{r message=FALSE}
+```{r message=FALSE, cache=TRUE}
 library(package = randomForest)
 trained <- randomForest(classe ~ ., data = training)
 ```

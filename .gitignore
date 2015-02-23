@@ -4,3 +4,4 @@
 *.pdf
 *.bib
 scripts/report.html
+report_cache
