@@ -127,7 +127,16 @@ trained
 
 ### Out-of-sample error estimation
 
-To estimate the out of sample error, I used the generated model to predict the class for each observation in the validation set.
+Although the model output shows an OOB estimate of error rate (0.77%), 
+I used the generated model to predict the class for each observation in the validation set
+to estimate the out of sample error as required by the project instructions.
+
+```{r cross-validation}
+validate_prediction <- predict(object = trained, newdata = validation)
+(accuracy <- mean(validate_prediction == validation$classe))
+```
+
+This results in an estimated `r accuracy` accuracy, or `r round((1-accuracy)*100, 1)`% out of sample error.
 
 
 </br>
