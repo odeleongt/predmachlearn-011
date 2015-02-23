@@ -82,7 +82,7 @@ For this I split the training dataset in training (60%) and validation (40%) dat
 and used the validation set to estimate the error as described in a section below.
 
 </summary>
-```{r, message=FALSE, results='hide'}
+```{r split-data, message=FALSE, results='hide', cache=TRUE}
 set.seed(2015-02-22) # Set seed for reproducibility
 rows_for_training <- sample(x = 1:nrow(training_clean),
                             size = ceiling(nrow(training_clean) * 0.6),
@@ -108,7 +108,8 @@ qplot(data = training, x = roll_forearm, y = pitch_forearm,
 
 I trained the model with the `randomForest` package, using the default settings. 
 
-```{r message=FALSE, cache=TRUE}
+```{r message=FALSE, cache=TRUE, dependson="split-data"}
+set.seed(2015-02-22) # Set seed for reproducibility
 trained <- randomForest(classe ~ ., data = training)
 ```
 
