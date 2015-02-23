@@ -122,7 +122,6 @@ Thus, I opted to build a randomForest model for its accuracy and to avoid using 
 
 
 ```r
-library(package = ggplot2)
 qplot(data = training, x = roll_forearm, y = pitch_forearm,
       color = classe, size = I(0.5)) + theme_classic()
 ```
@@ -133,7 +132,7 @@ I trained the model with the `randomForest` package, using the default settings.
 
 
 ```r
-library(package = randomForest)
+set.seed(2015-02-22) # Set seed for reproducibility
 trained <- randomForest(classe ~ ., data = training)
 ```
 
@@ -150,14 +149,14 @@ Call:
                      Number of trees: 500
 No. of variables tried at each split: 7
 
-        OOB estimate of  error rate: 0.82%
+        OOB estimate of  error rate: 0.77%
 Confusion matrix:
      A    B    C    D    E class.error
-A 3272    4    0    0    1 0.001525786
-B   17 2181    9    1    0 0.012228261
-C    0   18 2020    5    0 0.011257954
-D    0    0   31 1869    1 0.016833246
-E    0    1    1    6 2093 0.003807711
+A 3271    4    0    0    2 0.001830943
+B   17 2182    8    1    0 0.011775362
+C    0   18 2021    4    0 0.010768478
+D    0    0   26 1875    0 0.013677012
+E    0    1    1    7 2092 0.004283674
 ```
 </details>
 
@@ -166,7 +165,21 @@ E    0    1    1    6 2093 0.003807711
 
 ### Out-of-sample error estimation
 
-To estimate the out of sample error, I used the generated model to predict the class for each observation in the validation set.
+Although the model output shows an OOB estimate of error rate (0.77%), 
+I used the generated model to predict the class for each observation in the validation set
+to estimate the out of sample error as required by the project instructions.
+
+
+```r
+validate_prediction <- predict(object = trained, newdata = validation)
+(accuracy <- mean(validate_prediction == validation$classe))
+```
+
+```
+## [1] 0.9942753
+```
+
+This results in an estimated 0.9942753 accuracy, or 0.6% out of sample error.
 
 
 </br>
@@ -174,6 +187,22 @@ To estimate the out of sample error, I used the generated model to predict the c
 ### The model in action
 
 Using the developed model, I predicted the class for each observation in the test set and obtained all 20 results correctly.
+
+
+```r
+test <- read.csv(file = "./data/pml-testing.csv", stringsAsFactors = FALSE,
+                     row.names = 1, na.strings = c("#DIV/0!", "", "NA"))
+(test_prediction <- predict(object = trained, newdata = test))
+```
+
+```
+##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
+##  B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B 
+## Levels: A B C D E
+```
+
+
+
 
 
 </br>
