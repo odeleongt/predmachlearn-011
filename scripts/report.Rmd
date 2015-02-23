@@ -84,3 +84,12 @@ To estimate the out of sample error, I used the generated model to predict the c
 ### The model in action
 
 Using the developed model, I predicted the class for each observation in the test set and obtained all 20 results correctly.
+
+
+</br>
+
+<details><summary>
+Released under a [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0) license.
+</summary>
+This analysis uses data published under CC BY-SA, so it is considered a derivative use of the [Weight Lifting Exercises Dataset](http://groupware.les.inf.puc-rio.br/har#weight_lifting_exercises) by [Groupware@LES](http://groupware.les.inf.puc-rio.br/) and released under a compatible license as required (as declared in the repository README file). 
+</details>
