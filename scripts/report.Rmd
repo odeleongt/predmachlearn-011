@@ -145,6 +145,12 @@ This results in an estimated `r accuracy` accuracy, or `r round((1-accuracy)*100
 
 Using the developed model, I predicted the class for each observation in the test set and obtained all 20 results correctly.
 
+```{r predict_test, }
+test <- read.csv(file = "./data/pml-testing.csv", stringsAsFactors = FALSE,
+                     row.names = 1, na.strings = c("#DIV/0!", "", "NA"))
+(test_prediction <- predict(object = trained, newdata = test))
+```
+
 
 </br>
 
