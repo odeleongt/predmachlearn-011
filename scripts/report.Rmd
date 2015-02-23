@@ -61,6 +61,9 @@ and all the summary columns (which contained mostly `NA`s, except for the summar
 </summary>
 ```{r, message=FALSE, comment=""}
 source(file = "./scripts/prepare_data.R", echo = TRUE)
+
+# Set classe to factor, for use with randomForest
+training_clean$classe <- factor(training_clean$classe)
 ```
 </details>
 
@@ -91,6 +94,30 @@ validation <- training_clean[-rows_for_training, ]
 ### Building the model
 
 In this section I describe the model building process.
+As exemplified in the figure below, there are non-linear relationships between the features contained in the dataset.
+Thus, I opted to build a randomForest model for its accuracy and to avoid using linear models.
+
+```{r descriptive_plot, fig.height=3, fig.width=7, results='hide'}
+library(package = ggplot2)
+qplot(data = training, x = roll_forearm, y = pitch_forearm,
+      color = classe, size = I(0.5)) + theme_classic()
+```
+
+I trained the model with the `randomForest` package, using the default settings. 
+
+```{r message=FALSE}
+library(package = randomForest)
+trained <- randomForest(classe ~ ., data = training)
+```
+
+<details>
+<summary>
+Show model output (section collapsed for readability)
+</summary>
+```{r echo=FALSE, comment=""}
+trained
+```
+<details>
 
 
 </br>
