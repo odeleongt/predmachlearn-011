@@ -24,7 +24,7 @@ This report addresses my Practical Machine Learning ([predmachlearn-011](https:/
 It includes a description of the data processing steps, the rationale for model selection, the _model building process_ the use of _cross-validation for estimation of the out of sample error_.
 
 This compiled report contains code chunks to show the data analysis as it was performed.
-The code chunks are collapsed for readability (in [compatible browsers](http://www.w3schools.com/tags/tag_details.asp)) and can be expanded for revision by clicking on the sentences labeled as "section collapsed for readability".
+The lengthy code chunks are collapsed for readability (in [compatible browsers](http://www.w3schools.com/tags/tag_details.asp)) and can be expanded for revision by clicking on the sentences labeled as "section collapsed for readability".
 For example:
 
 <details><summary>
