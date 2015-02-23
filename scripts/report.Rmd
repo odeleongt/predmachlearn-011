@@ -152,6 +152,19 @@ test <- read.csv(file = "./data/pml-testing.csv", stringsAsFactors = FALSE,
 ```
 
 
+```{r output_prediction, results='hide', echo=FALSE}
+pred <- data.frame(pred = as.character(test_prediction),
+                   name = names(test_prediction),
+                   stringsAsFactors = FALSE)
+
+apply(X = pred, 1, FUN = function(r){
+  write.table(r["pred"],
+              file = paste0("./output/problem_id_", r["name"], ".txt"),
+              row.names = FALSE, col.names = FALSE)
+})
+```
+
+
 </br>
 
 <details><summary>
