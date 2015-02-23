@@ -14,7 +14,10 @@ output:
 
 
 
-```{r results='hide', message=FALSE, echo=FALSE}
+```{r prepare_environment, results='hide', message=FALSE, echo=FALSE}
+library(package = randomForest)
+library(package = ggplot2)
+
 knitr::opts_knit$set(root.dir = "..")
 ```
 
@@ -99,7 +102,6 @@ As exemplified in the figure below, there are non-linear relationships between t
 Thus, I opted to build a randomForest model for its accuracy and to avoid using linear models.
 
 ```{r descriptive_plot, fig.height=3, fig.width=7, results='hide'}
-library(package = ggplot2)
 qplot(data = training, x = roll_forearm, y = pitch_forearm,
       color = classe, size = I(0.5)) + theme_classic()
 ```
@@ -107,7 +109,6 @@ qplot(data = training, x = roll_forearm, y = pitch_forearm,
 I trained the model with the `randomForest` package, using the default settings. 
 
 ```{r message=FALSE, cache=TRUE}
-library(package = randomForest)
 trained <- randomForest(classe ~ ., data = training)
 ```
 
